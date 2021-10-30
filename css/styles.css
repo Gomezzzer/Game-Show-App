@@ -97,6 +97,19 @@ button {
   background-color: #76CE82;
 }
 
+.btn {
+  cursor: pointer;
+  transition-duration: .5s;
+
+}
+
+.btn:hover {
+  background: rgb(95, 168, 165);
+  color: white;
+  
+}
+
+
 /* Keyboard */
 
 .keyrow {
