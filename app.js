@@ -33,7 +33,6 @@ const getRandomPhraseAsArray = (arr)  => {
 
 
 
-
 // adds the letters of a string to the display
 function addPhraseToDisplay(arr) {
     for (let i = 0; i < arr.length; i++) {
@@ -49,7 +48,7 @@ function addPhraseToDisplay(arr) {
     }
 
 // check if a letter is in the phrase 
- const checkLetter = button => {
+const checkLetter = button => {
   const Letter = ul.children;
   let match = null;
   for (let i = 0; i < Letter.length; i++) {
