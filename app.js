@@ -8,7 +8,6 @@ const overlay = document.getElementById("overlay");
 let missed = 0;
 
 
-
 //phrases
 const phrases = [
  "may the force be with you",
@@ -17,7 +16,6 @@ const phrases = [
  "i would like to see the baby",
  "you talking to me"
 ];
-
 
 
 // listen for the start game button to be pressed
@@ -33,13 +31,16 @@ const getRandomPhraseAsArray = (arr)  => {
       return arr[randomPhrase].split("");  
   } 
 
+
+
+
 // adds the letters of a string to the display
-const addPhraseToDisplay = (arr) => {
+function addPhraseToDisplay(arr) {
     for (let i = 0; i < arr.length; i++) {
-        const li = document.createElement('li');
+        let li = document.createElement('li');
         li.textContent = arr[i];
-        ul.appendChild(li);
-        if (arr[i] !== " " ) {
+        ul.append(li);
+        if (li.textContent !== " " ) {
           li.className = "letter";
         } else {
           li.className = "space";
@@ -51,7 +52,7 @@ const addPhraseToDisplay = (arr) => {
  const checkLetter = button => {
   const Letter = ul.children;
   let match = null;
-  for (let i=0; i < Letter.length; i++) {
+  for (let i = 0; i < Letter.length; i++) {
    if (button.textContent === Letter[i].textContent) {
     Letter[i].classList.add('show');
     match = Letter[i].textContent;
@@ -65,7 +66,7 @@ return match;
 // listen for the onscreen keyboard to be clicked  
 qwerty.addEventListener('click', (e) => {
   const button = e.target;
-  const imgs = document.querySelectorAll("img");
+  const imgs =document.querySelectorAll('img');
   let letterFound;
   if (e.target.tagName === "BUTTON") {
      e.target.className = 'chosen';
@@ -76,8 +77,9 @@ qwerty.addEventListener('click', (e) => {
          imgs[missed].src = "images/lostHeart.png";
          missed++;
      }
-    }
+  }
     checkWin();
+
 }); 
 
 // check if the game has been won or lost
@@ -91,15 +93,25 @@ qwerty.addEventListener('click', (e) => {
      overlay.firstElementChild.textContent = "You're a Winner!";
      overlay.style.display = 'flex';
      phrase.style.display = 'none';
+     startButton.textContent = "Play Again?";
+     restart();
     } else if (missed >=5) {
        overlay.className = ('lose');
        overlay.firstElementChild.textContent = "Oh No, You lost.";
        overlay.style.display = 'flex';
        phrase.style.display = 'none';
        startButton.textContent = "Play Again?";
-    
+       restart();
    }    
 }
+
+// Restart the game
+ const restart = () => {
+     startButton.addEventListener('click', () => {
+     location.reload();
+    });
+}
+
 
 
 
