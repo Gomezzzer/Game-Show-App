@@ -13,7 +13,7 @@ const phrases = [
  "may the force be with you",
  "say hello to my little friend",
  "read them and weep",
- "i would like to see the baby",
+ "three sheets to the wind",
  "you talking to me"
 ];
 
@@ -91,14 +91,12 @@ qwerty.addEventListener('click', (e) => {
      overlay.className = ('win');
      overlay.firstElementChild.textContent = "You're a Winner!";
      overlay.style.display = 'flex';
-     phrase.style.display = 'none';
      startButton.textContent = "Play Again?";
      restart();
     } else if (missed >=5) {
        overlay.className = ('lose');
        overlay.firstElementChild.textContent = "Oh No, You lost.";
        overlay.style.display = 'flex';
-       phrase.style.display = 'none';
        startButton.textContent = "Play Again?";
        restart();
    }    
