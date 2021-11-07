@@ -65,7 +65,7 @@ return match;
 // listen for the onscreen keyboard to be clicked  
 qwerty.addEventListener('click', (e) => {
   const button = e.target;
-  const imgs =document.querySelectorAll('img');
+  const imgs = document.querySelectorAll('img');
   let letterFound;
   if (e.target.tagName === "BUTTON") {
      e.target.className = 'chosen';
