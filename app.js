@@ -5,6 +5,7 @@ const ul = document.querySelector("ul");
 const overlay = document.getElementById("overlay");
 
 
+
 let missed = 0;
 
 
@@ -91,22 +92,25 @@ qwerty.addEventListener('click', (e) => {
      overlay.className = ('win');
      overlay.firstElementChild.textContent = "You're a Winner!";
      overlay.style.display = 'flex';
+     phrase.style.display = 'none';
      startButton.textContent = "Play Again?";
      restart();
     } else if (missed >=5) {
        overlay.className = ('lose');
        overlay.firstElementChild.textContent = "Oh No, You lost.";
        overlay.style.display = 'flex';
+       phrase.style.display = 'none';
        startButton.textContent = "Play Again?";
        restart();
    }    
 }
 
 // Restart the game
- const restart = () => {
-     startButton.addEventListener('click', () => {
-     location.reload();
-    });
+const restart = () => {
+  startButton.addEventListener('click', () => {
+    location.reload();
+  });
+  
 }
 
 

@@ -95,6 +95,8 @@ button {
 .show {
   color: #000;
   background-color: #76CE82;
+  transform: scale(1.07);
+  transition: all .5s ease-in-out;
 }
 
 .btn {
